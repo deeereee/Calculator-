@@ -1,0 +1,72 @@
+﻿<Window x:Class="calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:calculator"
+        mc:Ignorable="d"
+        Title="Калькулятор" Height="600" Width="450" ResizeMode="NoResize" PreviewKeyDown="Window_PreviewKeyDown">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+
+        <TextBox x:Name="tb" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="8" Grid.RowSpan="1"  FontSize="60" TextAlignment="Right" Text="0"  Background="#FF3E3C3C" Foreground="White" BorderBrush="#FF3E3C3C" IsReadOnly="True"/>
+
+        <TextBox x:Name="tb2" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="8" Grid.RowSpan="1"  FontSize="40" TextAlignment="Right" Text="" Background="#FF3E3C3C" Foreground="#FF706767" BorderBrush="#FF3E3C3C" IsReadOnly="True"/>
+
+
+
+        <Button  Grid.Row="7" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_comma" Content="," FontSize="50" Background="Black" Foreground="#FF666464"/>
+        <Button  Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_0" Content="0" FontSize="40" Background="Black" Foreground="#FF666464"/>
+        <Button  Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_change_sign" Content="+/- " FontSize="40" Background="Black" Foreground="#FF666464"/>
+
+        <Button  Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_1" Content="1" FontSize="40" Background="Black" Foreground="#FF666464"/>
+        <Button  Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_1" Content="2" FontSize="40" Background="Black" Foreground="#FF666464"/>
+        <Button  Grid.Row="6" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_1" Content="3" FontSize="40" Background="Black" Foreground="#FF666464"/>
+
+        <Button  Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_1" Content="4" FontSize="40" Background="Black" Foreground="#FF666464"/>
+        <Button  Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_1" Content="5" FontSize="40" Background="Black" Foreground="#FF666464"/>
+        <Button  Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_1" Content="6" FontSize="40" Background="Black" Foreground="#FF666464"/>
+
+        <Button  Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_1" Content="7" FontSize="40" Background="Black" Foreground="#FF666464"/>
+        <Button  Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_1" Content="8" FontSize="40" Background="Black" Foreground="#FF666464"/>
+        <Button  Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_1" Content="9" FontSize="40" Background="Black" Foreground="#FF666464"/>
+
+        <Button  Grid.Row="7" Grid.Column="6" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_equals" Content="=" FontSize="50" Background="Black" Foreground="#FFDAD7D7"/>
+        <Button  Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_plus" Content="+" FontSize="50" Background="#FF3E3C3C"/>
+        <Button  Grid.Row="5" Grid.Column="6" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_minus" Content="-" FontSize="50" Background="#FF3E3C3C"/>
+        <Button  Grid.Row="4" Grid.Column="6" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_multiply" Content="*" FontSize="40" Background="#FF3E3C3C"/>
+
+        <Button  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_1x" Content="1/x" FontSize="40"  Background="#FF252525"/>
+        <Button  Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_x2" Content="x^2" FontSize="40"  Background="#FF252525"/>
+        <Button  Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_xy" Content="x^y" FontSize="40"  Background="#FF252525"/>
+        <Button  Grid.Row="3" Grid.Column="6" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_divide" Content="/" FontSize="40" Background="#FF3E3C3C"/>
+
+        <Button  Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_sqrt" Content="sqrt(x)" FontSize="38"  Background="#FF252525"/>
+        <Button  Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_cos" Content="cos(x)" FontSize="40"  Background="#FF252525"/>
+        <Button  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_sin" Content="sin(x)" FontSize="40"  Background="#FF252525"/>
+
+        <Button  Grid.Row="2" Grid.Column="6" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="Button_C" Content="C" FontSize="40" Background="#FF746D6D"/>
+
+    </Grid>
+</Window>
